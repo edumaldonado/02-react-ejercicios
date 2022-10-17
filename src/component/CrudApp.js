@@ -26,20 +26,29 @@ const initialDB = [
 ]
 
 
+
 const CrudApp =()=>{
     const [db, setDb] = useState(initialDB);
     const [dataToEdit, setDataToEdit] = useState(null);
-    //console.log(db);
-    //db.map(el => console.log(el));
+
     const createData = (data) =>{
         data.id = Date.now(); //para tratar de crear un id unico
-        console.log(db);
-        console.log(data);
-        setDb(...db,data);
-        console.log(db);
+        setDb([...db,data]);
     };
-    const updateData = (data) =>{};
-    const deleteData = (id) =>{};
+    const updateData = (data) =>{
+        let newData = db.map(el => el.id === data.id? data : el );
+        setDb(newData);
+    };
+    const deleteData = (id) =>{
+        let isDelete = window.confirm(`Esta seguro de eliminar el registro con el id  ${id}`);
+        if (isDelete){
+            let newData = db.filter(el => el.id !== id);
+            setDb(newData);
+        }
+        //else{
+
+        //}
+    };
     return(
         <>
             <h1> CRUD APP</h1>
