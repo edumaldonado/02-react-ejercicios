@@ -51,9 +51,11 @@ const CrudApp =()=>{
     };
     return(
         <>
-            <h1> CRUD APP</h1>
+            <h2> CRUD App</h2>
+            <article className="grid-1-2">
             <CrudForm createData = {createData} updateData ={updateData} dataToEdit={dataToEdit} setDataToEdit={setDataToEdit}/>
             <CrudTable data={db} setDataToEdit={setDataToEdit} deleteData ={deleteData} />
+            </article>
         </>
     )
 }
