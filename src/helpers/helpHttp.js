@@ -15,11 +15,11 @@ export const helpHttp = () => {
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
 
-    console.log(options);
-
+    //console.log(options);
+    //    console.log(endpoint);
     setTimeout(() => controller.abort(), 3000);
 
-    return fetch(endpoint.options)
+    return fetch(endpoint, options)
       .then((res) =>
         res.ok
           ? res.json()
