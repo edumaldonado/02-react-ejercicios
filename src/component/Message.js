@@ -1,6 +1,6 @@
 import React from "react";
 
-const Massage = (msg, bgColor) => {
+const Message = ({ msg, bgColor }) => {
   let styles = {
     padding: "1rem",
     marginBottom: "1rem",
@@ -9,6 +9,7 @@ const Massage = (msg, bgColor) => {
     fontWeight: "bold",
     backgroundColor: bgColor,
   };
+
   return (
     <div style={styles}>
       {/* <p>{msg}</p> */}
@@ -17,4 +18,4 @@ const Massage = (msg, bgColor) => {
   );
 };
 
-export default Massage;
+export default Message;
